@@ -53,12 +53,6 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          <div className="flex items-center space-x-4">
-            <button className="hidden md:block bg-gradient-to-r from-[#1A73E8] to-[#00ACC1] hover:from-[#1A73E8] hover:to-[#1A73E8] text-white py-2 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-lg transform hover:translate-y-[-2px] pulse-effect">
-              Download
-            </button>
-          </div>
-
           <button
             onClick={toggleMobileMenu}
             className="md:hidden text-[#1A73E8] p-2 rounded-md hover:bg-blue-50 transition-colors"
@@ -106,9 +100,6 @@ const Navbar: React.FC = () => {
                 {item}
               </a>
             ))}
-            <button className="bg-gradient-to-r from-[#1A73E8] to-[#00ACC1] text-white py-3 px-6 rounded-full transition-colors duration-300 mt-4">
-              Download
-            </button>
           </div>
         </div>
       </div>

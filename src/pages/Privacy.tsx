@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Privacy: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-gradient-to-b from-[#E1F5FE] to-white pt-20">
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">
+        <h1 className="text-4xl font-bold text-[#1A73E8] mb-8">
           Privacy Policy
         </h1>
 
-        <div className="prose max-w-none">
+        <div className="prose max-w-none bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">
             1. Information We Collect
           </h2>
@@ -57,8 +57,25 @@ const Privacy: React.FC = () => {
           </p>
 
           <div className="mt-12 border-t border-gray-200 pt-6">
-            <Link to="/" className="text-[#1A73E8] hover:underline">
-              &larr; Back to Home
+            <Link
+              to="/"
+              className="text-[#1A73E8] hover:text-[#00ACC1] transition-colors hover:underline flex items-center group"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mr-2 transition-transform group-hover:-translate-x-1"
+              >
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+              Back to Home
             </Link>
           </div>
         </div>

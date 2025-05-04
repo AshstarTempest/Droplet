@@ -1,3 +1,17 @@
+/* Global body styles to ensure proper background handling */
+html,
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  background: transparent; /* Let the app's background shine through */
+  margin: 0;
+  padding: 0;
+}
+
 /* Water bubbles animation */
 .bubble {
   position: absolute;
@@ -80,7 +94,11 @@
   width: 50px;
   height: 75px;
   margin: 0 auto;
-  background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.4)
+  );
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   position: relative;
   transform-origin: center bottom;
@@ -88,7 +106,8 @@
 }
 
 @keyframes drip {
-   0%, 100% {
+  0%,
+  100% {
     transform: scaleY(1);
   }
   50% {
@@ -108,7 +127,7 @@
   position: absolute;
   width: 60px;
   height: 60px;
-  background: #1A73E8;
+  background: #1a73e8;
   border-radius: 50%;
   top: -30px;
   left: 50%;
@@ -131,7 +150,7 @@
   width: 100%;
   height: 10px;
   border-radius: 50%;
-  background: #1A73E8;
+  background: #1a73e8;
   animation: wave 1.5s ease-in-out infinite;
 }
 
@@ -156,7 +175,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #1A73E8;
+  background: #1a73e8;
   opacity: 0;
 }
 
@@ -391,7 +410,7 @@ html {
   top: 0;
   left: 0;
   height: 4px;
-  background: linear-gradient(90deg, #1A73E8, #00ACC1);
+  background: linear-gradient(90deg, #1a73e8, #00acc1);
   z-index: 9999;
   transition: width 0.1s ease;
 }
@@ -410,7 +429,8 @@ html {
 }
 
 @keyframes floatSlow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0);
   }
   50% {
@@ -419,7 +439,8 @@ html {
 }
 
 @keyframes floatMedium {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0);
   }
   50% {
@@ -428,7 +449,8 @@ html {
 }
 
 @keyframes floatFast {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -508,4 +530,30 @@ html {
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
+}
+
+/* Decorative elements that move slightly on scroll */
+.decor-element {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* Ensure proper z-index stacking for all sections */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom background for sections */
+.bg-gradient-section {
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Additional styles to ensure proper background display when scrolling */
+.content-container {
+  position: relative;
+  z-index: 10;
+  overflow: visible;
 }

@@ -9,7 +9,11 @@ import Footer from './components/Footer';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import Preloader from './components/Preloader';
-import { useScrollAnimation, ScrollProgressBar, useParallaxEffect } from './utils/ScrollAnimations';
+import {
+  useScrollAnimation,
+  ScrollProgressBar,
+  useParallaxEffect,
+} from './utils/ScrollAnimations';
 import './styles/animations.css';
 
 function App() {
@@ -21,33 +25,33 @@ function App() {
 
   useEffect(() => {
     document.title = 'Droplet - Turn Focus Into Flow';
-    
+
     // Add smooth scrolling to all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const href = this.getAttribute('href');
         if (!href) return;
-        
+
         const target = document.querySelector(href);
         if (target) {
           target.scrollIntoView({
-            behavior: 'smooth'
+            behavior: 'smooth',
           });
         }
       });
     });
-    
+
     // Simulate loading time for preloader demonstration
     const timer = setTimeout(() => {
       setLoading(false);
-      
+
       // Force a repaint after loading is done
       setTimeout(() => {
         window.scrollTo(window.scrollX, window.scrollY);
       }, 100);
     }, 2500);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -62,7 +66,7 @@ function App() {
           <div className="relative overflow-hidden bg-white">
             {/* Added a fixed background layer that extends beyond viewport */}
             <div className="fixed inset-0 bg-gradient-to-b from-[#E1F5FE] to-white z-0"></div>
-            
+
             {/* Content layer with proper z-index */}
             <div className="relative z-10">
               <Navbar />
